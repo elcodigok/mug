@@ -1,10 +1,13 @@
 import dns.resolver
 import time
 
+
 def discover_subdominio(dominio):
     f = open("subdomains-top1million-110000.txt", "r")
     contenido = f.readlines()
     f.close()
+
+    # Listado inicial de subdominios.
     lista_subdominios = [
         "www",
         "ftp",
@@ -13,10 +16,11 @@ def discover_subdominio(dominio):
         "cpanel",
         "webmail"
         ]
-    
+
+    # Carga todo el diccionario descargado.
     for elemento in contenido:
         lista_subdominios.append(elemento.strip())
-    
+
     for s in lista_subdominios:
         try:
             answer = dns.resolver.resolve(f"{s}.{dominio}", 'A')
@@ -30,8 +34,10 @@ def discover_subdominio(dominio):
 
 
 def main():
+    # Ingreso del dominio a analizar.
     dominio = input("Ingrese el dominio a analizar: ")
     subdominios = discover_subdominio(dominio)
+
 
 if __name__ == "__main__":
     main()
