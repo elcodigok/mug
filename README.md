@@ -4,5 +4,4 @@ por [Daniel Maldonado](https://danielmaldonado.com.ar) y [MUG](https://https://m
 
 ## Ejercicios prácticos
 
-- Herramienta ...
-- Herramienta ...
+- Clase 02. Enumración de subdominios. (enumeracion_dns.py)
